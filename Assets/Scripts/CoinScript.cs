@@ -1,15 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using System.Collections;
 public class CoinScript : MonoBehaviour
 {
-
-    public int score = 0;
-    // Start is called before the first frame update
+    private LevelManager gameLevelManager;
+    public int coinValue;
+    // Use this for initialization
     void Start()
     {
-
+        gameLevelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -17,11 +15,12 @@ public class CoinScript : MonoBehaviour
     {
 
     }
-    void OnTriggerEnter2D(Collider2D collider)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
-        score++;
-        Debug.Log("Score:" + score);
+        if (other.tag == "Player")
+        {
+            gameLevelManager.AddCoins(coinValue);
+            Destroy(gameObject);
+        }
     }
-
 }

@@ -21,7 +21,14 @@ public class PlayerController : MonoBehaviour
     public Vector3 respawnPoint;
     public bool Rpressed = false;
     public LevelManager gameLevelManager;
-
+    public BulletScript bullet;
+    public GameObject bulletPrefab;
+    bool facingright = true;
+    bool facingright1 = true;
+    public GameObject bulletToRight, bulletToLeft;
+    Vector2 BulletPos;
+    public float fireRate = 0.5f;
+    float nextFire = 0.0F;
     // Use this for initialization
     void Start()
     {
@@ -63,6 +70,11 @@ public class PlayerController : MonoBehaviour
             {
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
             }
+            if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                fire();
+            }
             playerAnimation.SetFloat("Speed", Mathf.Abs(rigidBody.velocity.x));
             playerAnimation.SetBool("OnGround", isTouchingGround);
 
@@ -92,11 +104,13 @@ public class PlayerController : MonoBehaviour
         movement = Input.GetAxis("Horizontal");
         if (movement > 0f)
         {
+            facingright = true;
             rigidBody.velocity = new Vector2(movement * speed, rigidBody.velocity.y);
             transform.localScale = new Vector2(1.324974f, -1.324974f);
         }
         else if (movement < 0f)
         {
+            facingright = false;
             rigidBody.velocity = new Vector2(movement * speed, rigidBody.velocity.y);
             transform.localScale = new Vector2(-1.324974f, -1.324974f);
         }
@@ -108,26 +122,31 @@ public class PlayerController : MonoBehaviour
         {
             rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpSpeed);
         }
+        if (Input.GetButtonDown("Fire1") && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            fire();
+        }
         playerAnimation.SetFloat("Speed", Mathf.Abs(rigidBody.velocity.x));
         playerAnimation.SetBool("OnGround", isTouchingGround);
 
 
 
     }
-async void OnCollisionEnter2D(Collision2D collision)
+    async void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Spike")
         {
             died = true;
-            await System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(1));
+            await System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(2));
             died = false;
             gameLevelManager.Respawn();
-          
-        }
-
-        
 
         }
+
+
+
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Checkpoint")
@@ -137,5 +156,28 @@ async void OnCollisionEnter2D(Collision2D collision)
         }
 
     }
-}
 
+    public void shootBullet()
+    {
+        GameObject b = Instantiate(bulletPrefab) as GameObject;
+        b.transform.position = gameObject.transform.position;
+    }
+
+    void fire()
+    {
+        BulletPos = transform.position;
+        if (facingright)
+        {
+            BulletPos += new Vector2(3F, 0.43F);
+            Instantiate(bulletToRight, BulletPos, Quaternion.identity);
+        }
+        else
+        {
+            BulletPos += new Vector2(-3F, 0.43F);
+            Instantiate(bulletToLeft, BulletPos, Quaternion.identity);
+
+        }
+
+
+    }
+}

@@ -62,13 +62,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BadGuyScript.cs" />
     <Compile Include="Assets\Scripts\BulletScript.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CheckPoint.cs" />
     <Compile Include="Assets\Scripts\CoinScript.cs" />
+    <Compile Include="Assets\Scripts\EnemySpawnerScript.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\ParallaxEffect.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\SkullScript.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/viv3k/Downloads/Game1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

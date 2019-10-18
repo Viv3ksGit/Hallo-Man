@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BulletToLeft Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7364834099782164782, guid: 7f121e69eacac491b8954b27fb794e24,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     - target: {fileID: 7364834099782164787, guid: 7f121e69eacac491b8954b27fb794e24,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -75,12 +80,17 @@ PrefabInstance:
     - target: {fileID: 7364834099782164785, guid: 7f121e69eacac491b8954b27fb794e24,
         type: 3}
       propertyPath: velocityx
-      value: -5
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7364834099782164785, guid: 7f121e69eacac491b8954b27fb794e24,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364834099782164783, guid: 7f121e69eacac491b8954b27fb794e24,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f121e69eacac491b8954b27fb794e24, type: 3}

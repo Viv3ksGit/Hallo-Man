@@ -17,6 +17,6 @@ public class BulletScript : MonoBehaviour
     void Update()
     {
         rb.velocity = new Vector3(velocityx, velocityy);
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 5f);
     }
 }

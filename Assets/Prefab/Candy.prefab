@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2486852132247475951}
   - component: {fileID: 2486852132247475948}
   m_Layer: 5
-  m_Name: CoinSprite
+  m_Name: Candy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,9 +95,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0120742675, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.381914
+  m_Radius: 1.2531793
 --- !u!114 &2486852132247475948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,4 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ca8b8c84d0443f9bbb7d7dfcded339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinValue: 1
+  candyValue: 0

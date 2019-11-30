@@ -7,6 +7,9 @@ TagManager:
   - FallDetector
   - Spike
   - CheckPoint
+  - Bullet
+  - BadGuy
+  - badGround
   layers:
   - Default
   - TransparentFX

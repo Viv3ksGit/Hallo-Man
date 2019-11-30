@@ -3,7 +3,7 @@ using System.Collections;
 public class CoinScript : MonoBehaviour
 {
     private LevelManager gameLevelManager;
-    public int coinValue;
+    public int candyValue;
     // Use this for initialization
     void Start()
     {
@@ -19,8 +19,15 @@ public class CoinScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            gameLevelManager.AddCoins(coinValue);
+            gameLevelManager.AddCoins(candyValue);
             Destroy(gameObject);
         }
+        if(other.tag == "CheckPoint")
+        {
+            
+                 gameLevelManager.AddCoins(candyValue);
+
+        }
+        
     }
 }

@@ -143,6 +143,15 @@ public class PlayerController : MonoBehaviour
             gameLevelManager.Respawn();
 
         }
+        if (collision.gameObject.tag == "BadGuy")
+        {
+            died = true;
+            await System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(2));
+            died = false;
+            gameLevelManager.Respawn();
+
+
+} 
 
 
 
@@ -154,6 +163,7 @@ public class PlayerController : MonoBehaviour
             respawnPoint = other.transform.position;
 
         }
+        
 
     }
 

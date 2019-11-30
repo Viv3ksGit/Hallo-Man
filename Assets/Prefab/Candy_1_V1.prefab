@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7889341593229523853}
   - component: {fileID: 3704506753331684152}
   - component: {fileID: 5023922926586687713}
+  - component: {fileID: 8031496262350214624}
   m_Layer: 0
   m_Name: Candy_1_V1
   m_TagString: Untagged
@@ -93,4 +94,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ca8b8c84d0443f9bbb7d7dfcded339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinValue: 1
+  candyValue: 0
+--- !u!58 &8031496262350214624
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626284774023335990}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.004999995, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.225
